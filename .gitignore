@@ -1,3 +1,5 @@
 .idea
-.vscode
+.vscode/*
+!.vscode/launch.json
+!.vscode/extensions.json
 docker-compose.yml

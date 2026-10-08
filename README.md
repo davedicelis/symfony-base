@@ -56,3 +56,16 @@ Este repositorio contiene la configuración básica para ejecutar aplicaciones S
     ###< symfony/framework-bundle ###
     ```
 6. Una vez instalada tu aplicación Symfony, ve a http://localhost:1000
+
+## Debugging with Xdebug (VS Code)
+The repository ships a ready-to-use `.vscode/launch.json` (VS Code will also recommend the **PHP Debug** extension).
+
+1. Open the project folder in VS Code (with WSL: `code .` from the project folder).
+2. Go to **Run and Debug** (`Ctrl+Shift+D`), select **Listen for Xdebug (Docker)** and press `F5`.
+3. Set a breakpoint and trigger Xdebug:
+    - Browser: add `?XDEBUG_SESSION=1` to the URL (or use the *Xdebug helper* extension).
+    - Console (inside the container): `XDEBUG_TRIGGER=1 sf <command>`
+
+> [!NOTE]
+> `"hostname": "0.0.0.0"` in `launch.json` makes VS Code listen on IPv4. Without it, Docker Desktop on WSL2 can't reach the debugger (`Connection refused`).
+

@@ -8,6 +8,8 @@ services:
         UID: $U_ID
     volumes:
       - ./:/var/www/html
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ###> XDEBUG 3 ###
     # Use your client IP here
     # Linux: run "ip a | grep docker0"
